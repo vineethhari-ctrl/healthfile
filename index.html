@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 <title>Health File</title>
 <meta name="description" content="A private health record that stays on your phone." />
 
@@ -10,13 +10,17 @@
 <meta name="theme-color" content="#0F6B5C" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Health File" />
 
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app"></div>
+  <header id="appbar" class="appbar hidden"></header>
+  <main id="app"></main>
+  <nav id="bottomnav" class="bottomnav hidden"></nav>
+  <button id="fab" class="fab hidden"></button>
+
   <div id="lightbox" class="lightbox hidden"></div>
   <div id="toast" class="toast hidden"></div>
 

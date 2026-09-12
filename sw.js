@@ -1,6 +1,6 @@
 /* Offline support. The app shell is cached so it opens without a network,
    which matters in a hospital basement. No user data ever goes through here. */
-var CACHE = "healthfile-v1";
+var CACHE = "healthfile-v3";
 var SHELL = [
   "./", "./index.html", "./styles.css", "./db.js", "./app.js",
   "./manifest.webmanifest",
