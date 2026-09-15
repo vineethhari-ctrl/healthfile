@@ -257,3 +257,140 @@ button.btn.danger { color: #A8341A; }
 button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
   outline: 2px solid var(--green); outline-offset: 2px;
 }
+
+/* ================= v4 additions ================= */
+
+/* person switcher in the app bar */
+.personbtn {
+  display: flex; align-items: center; gap: 6px; background: none; border: none;
+  color: #fff; font-family: var(--sans); font-size: 19px; font-weight: 600;
+  padding: 6px 10px; border-radius: 8px; cursor: pointer; flex: 1;
+  min-width: 0; letter-spacing: -.01em;
+}
+.personbtn:active { background: rgba(255,255,255,.16); }
+.personbtn .nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.personbtn svg { width: 17px; height: 17px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* sheets */
+.sheet {
+  position: fixed; inset: 0; z-index: 55; background: rgba(12,26,28,.45);
+  display: flex; align-items: flex-end;
+}
+.sheet-inner {
+  background: var(--card); width: 100%; max-width: 560px; margin: 0 auto;
+  border-radius: 18px 18px 0 0; padding: 10px 0 calc(env(safe-area-inset-bottom) + 14px);
+  max-height: 80vh; overflow-y: auto;
+}
+.sheet-grip { width: 38px; height: 4px; border-radius: 4px; background: var(--line); margin: 4px auto 12px; }
+.sheet-title { font-size: 12.5px; font-weight: 700; color: var(--faint); letter-spacing: .05em; padding: 0 20px 8px; }
+.sheet-row {
+  display: flex; align-items: center; gap: 12px; width: 100%; border: none; background: none;
+  padding: 14px 20px; font-family: var(--sans); font-size: 16px; color: var(--ink);
+  cursor: pointer; text-align: left;
+}
+.sheet-row:active { background: var(--paper); }
+.sheet-row.on { color: var(--green); font-weight: 600; }
+.sheet-row .tick { margin-left: auto; color: var(--green); }
+.sheet-row svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* alert banners */
+.banner {
+  border-radius: 12px; padding: 13px 15px; margin-bottom: 12px;
+  font-size: 14px; line-height: 1.5; display: flex; gap: 11px; align-items: flex-start;
+}
+.banner.warn { background: #FDF3E3; color: #6B4E12; }
+.banner.info { background: var(--green-bg); color: #14453C; }
+.banner .b-main { flex: 1; }
+.banner strong { display: block; margin-bottom: 2px; }
+.banner button {
+  border: none; background: rgba(0,0,0,.07); border-radius: 7px; padding: 7px 12px;
+  font-family: var(--sans); font-size: 13px; font-weight: 600; color: inherit;
+  cursor: pointer; flex-shrink: 0; align-self: center;
+}
+
+/* search */
+.searchwrap { margin-bottom: 14px; }
+.searchwrap input { font-size: 16px; }
+
+/* labs */
+.labcard {
+  background: var(--card); border-radius: 12px; box-shadow: var(--shadow);
+  padding: 14px 16px; margin-bottom: 10px;
+}
+.lab-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.lab-name { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.lab-latest { font-size: 21px; font-weight: 700; color: var(--green); white-space: nowrap; }
+.lab-latest span { font-size: 13px; font-weight: 500; color: var(--soft); }
+.lab-sub { font-size: 12.5px; color: var(--faint); margin-top: 2px; }
+.lab-chart { margin-top: 12px; }
+.lab-chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lab-rows { margin-top: 10px; border-top: 1px solid var(--line); }
+.lab-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px;
+}
+.lab-row:last-child { border-bottom: none; }
+.lab-row .d { color: var(--soft); font-size: 13px; }
+.lab-row .v { font-weight: 600; }
+.lab-del {
+  border: none; background: none; color: var(--faint); font-size: 18px;
+  cursor: pointer; padding: 0 0 0 12px; line-height: 1;
+}
+
+/* emergency card */
+.ecard {
+  position: fixed; inset: 0; z-index: 60; background: #8C1D12; color: #fff;
+  overflow-y: auto; padding: calc(env(safe-area-inset-top) + 16px) 18px
+            calc(env(safe-area-inset-bottom) + 30px);
+}
+.ecard .close {
+  position: absolute; top: calc(env(safe-area-inset-top) + 10px); right: 12px;
+  width: 42px; height: 42px; border-radius: 42px; border: none;
+  background: rgba(255,255,255,.18); color: #fff; font-size: 22px; cursor: pointer; line-height: 1;
+}
+.ecard .tag {
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; opacity: .75; margin-bottom: 6px;
+}
+.ecard .nm { font-size: 30px; font-weight: 700; line-height: 1.1; letter-spacing: -.025em; }
+.ecard .sub { font-size: 15px; opacity: .85; margin-top: 4px; }
+.ecard .blood {
+  display: inline-block; margin-top: 16px; background: #fff; color: #8C1D12;
+  font-size: 30px; font-weight: 800; padding: 6px 20px; border-radius: 10px; letter-spacing: -.02em;
+}
+.ecard h3 {
+  font-size: 12px; font-weight: 700; letter-spacing: .12em; opacity: .75;
+  margin: 26px 0 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.28);
+}
+.ecard .line { font-size: 16px; line-height: 1.5; padding: 7px 0; }
+.ecard .line small { display: block; font-size: 13px; opacity: .78; }
+.ecard a.call {
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(255,255,255,.14); border-radius: 11px; padding: 13px 16px;
+  color: #fff; text-decoration: none; margin-bottom: 9px; font-size: 16.5px; font-weight: 600;
+}
+.ecard a.call small { display: block; font-size: 12.5px; font-weight: 400; opacity: .8; margin-top: 2px; }
+
+/* follow-up chip on a visit */
+.followchip {
+  display: inline-block; margin-top: 10px; background: var(--green-bg); color: #14453C;
+  border-radius: 7px; padding: 6px 11px; font-size: 12.5px; font-weight: 600;
+}
+.followchip.due { background: #FDF3E3; color: #6B4E12; }
+
+/* refill warning */
+.refill { font-size: 12px; font-weight: 600; color: #8A5A0E; margin-top: 3px; }
+.refill.out { color: #A8341A; }
+
+/* printing: only the doctor view, cleanly */
+@media print {
+  .appbar, .bottomnav, .fab, .toast, .lightbox, #app, .printhide { display: none !important; }
+  .doctorview {
+    position: static !important; overflow: visible !important;
+    background: #fff !important; color: #000 !important;
+  }
+  .dv-inner { padding: 0 !important; max-width: none !important; }
+  .section-head { color: #000 !important; border-bottom: 1.5px solid #000 !important; }
+  .dv-alert { background: #f2f2f2 !important; border: 1px solid #999; }
+  body { background: #fff !important; }
+  a { text-decoration: none; color: #000; }
+}
